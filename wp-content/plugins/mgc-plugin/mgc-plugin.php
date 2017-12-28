@@ -37,34 +37,124 @@ defined('ABSPATH') or die('You don\t have permission to access this file, turn b
 class MgcPlugin
 {
 
-}
-function mgcplugin_admin_actions() {
-
-add_role('custom_moderator', __(
-        'Custom Moderator'),
-    array(
-        'read'              => true, // Allows a user to read
-        'create_posts'      => true, // Allows user to create new posts
-        'edit_posts'        => true, // Allows user to edit their own posts
-        'edit_others_posts' => true, // Allows user to edit others posts too
-        'publish_posts'     => true, // Allows the user to publish posts
-        'manage_categories' => true, // Allows user to manage post categories
-    )
-);
-
-    add_menu_page("Mgc Plugin Options", "Mgc Plugin Options" , 'edit_pages', "mgc-plugin-options", "mgcpluginMenu");
-    add_submenu_page("mgc-plugin-options-options" , "Options 1", "Option 1" , "edit_pages", "mgc-plugin-option-1", "option1");
-
-}
+    function __construct()
+    {
+        add_action('init', array($this, 'custom_post_type'));
+        add_action('init', array($this, 'add_custom_role'));
+        add_action('admin_menu', array($this, 'add_setting_page'));
+    }
 
 
-function mgcpluginMenu() {
-    echo <<<'EOD'
+   function activate() {
+
+     //generate  CPT
+       $this->custom_post_type();
+       $this->add_custom_role();
+       $this->add_setting_page();
+     //flush rewrite rules
+       flush_rewrite_rules();
+   }
+
+    function deactivate() {
+    //flush the rewrite rules
+        flush_rewrite_rules();
+
+    }
+
+    function uninstall () {
+     //delete CPT
+     //delete all the plugin data from DB
+    }
+
+    function custom_post_type() {
+        register_post_type( 'book', ['public' => true, 'label' => 'Books']);
+    }
+
+    function add_custom_role() {
+        add_role('custom_moderator', __(
+                'Custom Moderator'),
+            array(
+                'read'              => true, // Allows a user to read
+                'create_posts'      => true, // Allows user to create new posts
+                'edit_posts'        => true, // Allows user to edit their own posts
+                'edit_others_posts' => true, // Allows user to edit others posts too
+                'publish_posts'     => true, // Allows the user to publish posts
+                'manage_categories' => true, // Allows user to manage post categories
+            )
+        );
+    }
+
+    function mgpluginMenu () {
+        echo <<<'EOD'
     <h2> Coming Soon</h2>
 EOD;
+
+    }
+
+    function option1() {
+        echo <<<'EOD'
+    <h2> Please input a value in the text box</h2>
+EOD;
+
+    }
+
+
+    function add_setting_page() {
+        add_menu_page("Mgc Plugin Options", "Mgc Plugin Options" , 'edit_pages', "mgc-plugin-options", array($this,'mgpluginMenu'));
+        add_submenu_page("mgc-plugin-options" , "Options 1", "Option 1" , "edit_pages", "mgc-plugin-option-1", array($this, 'option1'));
+    }
+
+
+
 }
 
-function option1() {
-    echo "here is option 1";
+if( class_exists('MgcPlugin')) {
+    $mgcPlugin = new MgcPlugin();
 }
-add_action('admin_menu', 'mgcplugin_admin_actions');
+
+//activation
+register_activation_hook(__FILE__, array($mgcPlugin, 'activate'));
+
+
+//deactivation
+register_deactivation_hook(__FILE__, array($mgcPlugin, 'deactivate'));
+
+
+//uninstall
+//register_uninstall_hook(__FILE__, array($mgcPlugin, 'uninstall'));
+
+
+
+
+//
+//OLD QUERY
+//function mgcplugin_admin_actions() {
+//
+//add_role('custom_moderator', __(
+//        'Custom Moderator'),
+//    array(
+//        'read'              => true, // Allows a user to read
+//        'create_posts'      => true, // Allows user to create new posts
+//        'edit_posts'        => true, // Allows user to edit their own posts
+//        'edit_others_posts' => true, // Allows user to edit others posts too
+//        'publish_posts'     => true, // Allows the user to publish posts
+//        'manage_categories' => true, // Allows user to manage post categories
+//    )
+//);
+
+//    add_menu_page("Mgc Plugin Options", "Mgc Plugin Options" , 'edit_pages', "mgc-plugin-options", "mgcpluginMenu");
+//    add_submenu_page("mgc-plugin-options-options" , "Options 1", "Option 1" , "edit_pages", "mgc-plugin-option-1", "option1");
+
+//}
+
+//
+//function mgcpluginMenu() {
+//    echo <<<'EOD'
+//    <h2> Coming Soon</h2>
+//EOD;
+//}
+//
+//function option1() {
+//    echo "here is option 1";
+//}
+//add_action('admin_menu', 'mgcplugin_admin_actions');
