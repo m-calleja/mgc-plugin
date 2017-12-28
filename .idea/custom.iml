@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/wp-admin" />
+      <excludeFolder url="file://$MODULE_DIR$/wp-content/plugins/akismet" />
+      <excludeFolder url="file://$MODULE_DIR$/wp-content/themes" />
+      <excludeFolder url="file://$MODULE_DIR$/wp-includes" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
+
