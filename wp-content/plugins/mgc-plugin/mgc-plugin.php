@@ -34,122 +34,153 @@ Copyright 2005-2015 Automattic, Inc.
 /*Security*/
 defined('ABSPATH') or die('You don\t have permission to access this file, turn back kiddo!');
 
-class MgcPlugin
-{
+if(file_exists( dirname(__FILE__) . '/vendor/autoload.php')) {
+    require_once dirname(__FILE__) . '/vendor/autoload.php';
+}
 
-    function __construct()
+use Inc\Activate;
+use Inc\Deactivate;
+use Inc\Admin\AdminPages;
 
+if( !class_exists('MgcPlugin')) {
+    class MgcPlugin
     {
+        public $plugin;
+
+        function __construct()
+
+        {
+            $this->plugin = plugin_basename(__FILE__);
 
 
-    }
+        }
 
-    function register() {
-        add_action('admin_enqueue_scripts' , array($this, 'enqueue'));
-    }
+        function register()
+        {
+            add_action('admin_enqueue_scripts', array($this, 'enqueue'));
+            $this->create_post_type();
+            $this->create_custom_role();
+            $this->create_setting_page();
 
-    function create_post_type() {
-        add_action('init', array($this, 'custom_post_type'));
 
-    }
+            add_filter("plugin_action_links_$this->plugin" , array($this, 'settings_link'));
+        }
 
-   function create_custom_role() {
-        add_action('init', array($this, 'add_custom_role'));
+        function settings_link($links) {
+        $settings_link = '<a href="admin.php?page=mgc_options">Settings</a>';
+            array_push($links, $settings_link);
+            return $links;
+        }
 
-    }
+        function create_post_type()
+        {
+            add_action('init', array($this, 'custom_post_type'));
 
-   function create_setting_page() {
-        add_action('admin_menu', array($this, 'add_setting_page'));
+        }
 
-    }
+        function create_custom_role()
+        {
+            add_action('init', array($this, 'add_custom_role'));
 
-   function activate() {
-       $this->create_post_type();
-       $this->create_custom_role();
-       $this->create_setting_page();
-       //flush rewrite rules
-       flush_rewrite_rules();
-   }
+        }
 
-    function deactivate() {
-    //flush the rewrite rules
-        flush_rewrite_rules();
+        function create_setting_page()
+        {
+            add_action('admin_menu', array($this, 'add_setting_page'));
 
-    }
+        }
 
-    function uninstall () {
-     //delete CPT
-     //delete all the plugin data from DB
-    }
+        function activate()
+        {
+//            require_once plugin_dir_path(__FILE__) . 'inc/Activate.php';
+            Activate::activate();
+            //flush rewrite rules
+            flush_rewrite_rules();
+        }
 
-    function custom_post_type() {
-        register_post_type( 'book', ['public' => true, 'label' => 'Books']);
-    }
+        function deactivate()
+        {
+//            require_once plugin_dir_path(__FILE__) . 'inc/Deactivate.php';
 
-    function add_custom_role() {
-        add_role('custom_moderator', __(
-                'Custom Moderator'),
-            array(
-                'read'              => true, // Allows a user to read
-                'create_posts'      => true, // Allows user to create new posts
-                'edit_posts'        => true, // Allows user to edit their own posts
-                'edit_others_posts' => true, // Allows user to edit others posts too
-                'publish_posts'     => true, // Allows the user to publish posts
-                'manage_categories' => true, // Allows user to manage post categories
-            )
-        );
-    }
+            //flush the rewrite rules
+            flush_rewrite_rules();
 
-    function mgpluginMenu () {
-        echo <<<'EOD'
-    <h2> Coming Soon</h2>
-EOD;
+        }
 
-    }
+        function uninstall()
+        {
+            //delete CPT
+            //delete all the plugin data from DB
+        }
 
-    function option1() {
-        echo <<<'EOD'
+        function custom_post_type()
+        {
+            register_post_type('book', ['public' => true, 'label' => 'Books']);
+        }
+
+        function add_custom_role()
+        {
+            add_role('custom_moderator', __(
+                    'Custom Moderator'),
+                array(
+                    'read' => true, // Allows a user to read
+                    'create_posts' => true, // Allows user to create new posts
+                    'edit_posts' => true, // Allows user to edit their own posts
+                    'edit_others_posts' => true, // Allows user to edit others posts too
+                    'publish_posts' => true, // Allows the user to publish posts
+                    'manage_categories' => true, // Allows user to manage post categories
+                )
+            );
+        }
+
+        function admin_index()
+        {
+            require_once plugin_dir_path(__FILE__) . 'templates/admin.php';
+
+
+        }
+
+        function option1()
+        {
+            echo <<<'EOD'
     <h2> Please input a value in the text box</h2>
 EOD;
 
+        }
+
+
+        function add_setting_page()
+        {
+            add_menu_page("Mgc Plugin Options", "Mgc Plugin Options", 'edit_pages', "mgc_options", array($this, 'admin_index'), 'dashicons-admin-customizer', 110);
+//            add_submenu_page("mgc-plugin-options", "Options 1", "Option 1", "edit_pages", "mgc_option_1", array($this, 'option1'));
+        }
+
+        function enqueue()
+        {
+            //enqueeu all scripts
+            wp_enqueue_style('pluginstyle', plugins_url('/assets/style.css', __FILE__));
+            wp_enqueue_script('pluginscript', plugins_url('/assets/script.js', __FILE__));
+
+        }
+
     }
-
-
-    function add_setting_page() {
-        add_menu_page("Mgc Plugin Options", "Mgc Plugin Options" , 'edit_pages', "mgc-plugin-options", array($this,'mgpluginMenu'));
-        add_submenu_page("mgc-plugin-options" , "Options 1", "Option 1" , "edit_pages", "mgc-plugin-option-1", array($this, 'option1'));
-    }
-
-    function enqueue() {
-        //enqueeu all scripts
-        wp_enqueue_style('pluginstyle' , plugins_url('/assets/style.css', __FILE__));
-        wp_enqueue_script('pluginscript' , plugins_url('/assets/script.js', __FILE__));
-
-    }
-
-
-
-}
-
-if( class_exists('MgcPlugin')) {
     $mgcPlugin = new MgcPlugin();
     $mgcPlugin->register();
-    $mgcPlugin->create_post_type();
-    $mgcPlugin->create_custom_role();
-    $mgcPlugin->create_setting_page();
-}
+
+
 
 //activation
 register_activation_hook(__FILE__, array($mgcPlugin, 'activate'));
 
 
 //deactivation
-register_deactivation_hook(__FILE__, array($mgcPlugin, 'deactivate'));
+register_deactivation_hook(__FILE__, array('Deactivate', 'deactivate'));
 
 
 //uninstall
 //register_uninstall_hook(__FILE__, array($mgcPlugin, 'uninstall'));
 
+}
 
 
 
