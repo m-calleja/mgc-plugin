@@ -38,20 +38,36 @@ class MgcPlugin
 {
 
     function __construct()
+
     {
-        add_action('init', array($this, 'custom_post_type'));
-        add_action('init', array($this, 'add_custom_role'));
-        add_action('admin_menu', array($this, 'add_setting_page'));
+
+
     }
 
+    function register() {
+        add_action('admin_enqueue_scripts' , array($this, 'enqueue'));
+    }
+
+    function create_post_type() {
+        add_action('init', array($this, 'custom_post_type'));
+
+    }
+
+   function create_custom_role() {
+        add_action('init', array($this, 'add_custom_role'));
+
+    }
+
+   function create_setting_page() {
+        add_action('admin_menu', array($this, 'add_setting_page'));
+
+    }
 
    function activate() {
-
-     //generate  CPT
-       $this->custom_post_type();
-       $this->add_custom_role();
-       $this->add_setting_page();
-     //flush rewrite rules
+       $this->create_post_type();
+       $this->create_custom_role();
+       $this->create_setting_page();
+       //flush rewrite rules
        flush_rewrite_rules();
    }
 
@@ -104,12 +120,23 @@ EOD;
         add_submenu_page("mgc-plugin-options" , "Options 1", "Option 1" , "edit_pages", "mgc-plugin-option-1", array($this, 'option1'));
     }
 
+    function enqueue() {
+        //enqueeu all scripts
+        wp_enqueue_style('pluginstyle' , plugins_url('/assets/style.css', __FILE__));
+        wp_enqueue_script('pluginscript' , plugins_url('/assets/script.js', __FILE__));
+
+    }
+
 
 
 }
 
 if( class_exists('MgcPlugin')) {
     $mgcPlugin = new MgcPlugin();
+    $mgcPlugin->register();
+    $mgcPlugin->create_post_type();
+    $mgcPlugin->create_custom_role();
+    $mgcPlugin->create_setting_page();
 }
 
 //activation
