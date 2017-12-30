@@ -45,7 +45,7 @@ echo '<?xml version="1.0"?'.">\n";
 if ( empty($link_cat) )
 	$cats = get_categories(array('taxonomy' => 'link_category', 'hierarchical' => 0));
 else
-	$cats = get_categories(array('taxonomy' => 'link_category', 'hierarchical' => 0, 'include' => $link_cat));
+	$cats = get_categories(array('taxonomy' => 'link_category', 'hierarchical' => 0, 'inc' => $link_cat));
 
 foreach ( (array)$cats as $cat ) :
 	/**

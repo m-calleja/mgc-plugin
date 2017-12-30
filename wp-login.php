@@ -449,7 +449,7 @@ do_action( 'login_init' );
  * Fires before a specified login form action.
  *
  * The dynamic portion of the hook name, `$action`, refers to the action
- * that brought the visitor to the login form. Actions include 'postpass',
+ * that brought the visitor to the login form. Actions inc 'postpass',
  * 'logout', 'lostpassword', etc.
  *
  * @since 2.8.0

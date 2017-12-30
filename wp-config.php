@@ -23,10 +23,10 @@
 define('DB_NAME', 'customdb');
 
 /** MySQL database username */
-define('DB_USER', 'admin');
+define('DB_USER', 'root');
 
 /** MySQL database password */
-define('DB_PASSWORD', 'adminwp');
+define('DB_PASSWORD', '');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
@@ -36,6 +36,9 @@ define('DB_CHARSET', 'utf8mb4');
 
 /** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
+
+/** Install new plugins & themes directly with no FTP */
+define('FS_METHOD','direct');
 
 /**#@+
  * Authentication Unique Keys and Salts.

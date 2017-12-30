@@ -1,0 +1,14 @@
+.add-info {
+    background-color: #DDD;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.add-info input,
+.add-info textarea {
+    width: 100%;
+    border: none;
+    padding: 10px;
+    margin: 0 0 10px 0;
+    box-sizing: border-box;
+}

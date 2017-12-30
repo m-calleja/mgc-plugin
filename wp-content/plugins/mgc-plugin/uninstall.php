@@ -7,7 +7,8 @@
 if (! defined('WP_UNINSTALL_PLUGIN')) {
     die;
 }
-
+//delete CPT
+//delete all the plugin data from DB
 
 //Clear Database stored data
 //$books = get_posts( array('post_type' => 'book', 'numberposts' => -1));
