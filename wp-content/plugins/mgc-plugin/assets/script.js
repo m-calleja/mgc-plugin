@@ -1,4 +1,4 @@
-const URL = "http://localhost/custom/wp-json/wp/v2/posts";
+const URL = "http://localhost/custom/wp-json/mgc-plugin/author/1";
 
 function generate_table() {
 
@@ -8,11 +8,11 @@ function generate_table() {
 
     if(generateOutputBtn) {
         var ourRequest = new XMLHttpRequest();
-        ourRequest.open('GET', data.siteURL + 'wp-json/wp/v2/posts');
+        ourRequest.open('GET', URL);
         ourRequest.onload = function() {
             if (ourRequest.status >= 200 && ourRequest.status < 400) {
                 var data = JSON.parse(ourRequest.responseText);
-                //console.log(data);
+                console.log(data);
                 createHTML(data);
                 generateOutputBtn.remove();
             } else {
@@ -31,11 +31,54 @@ function generate_table() {
         var ourHTMLString = "";
 
         for(i = 0; i < data.length; i++) {
-            ourHTMLString += '<h2>' + data[i].title.rendered + '</h2>';
-            ourHTMLString += data[i].content.rendered;
+            //ourHTMLString += '<h2>' + data[i].post_title + '</h2>';
+            //ourHTMLString += data[i].post_content;
+            ourHTMLString += data[i].ID;
+            outputContainer.innerHTML = ourHTMLString;
+
+
+
+
+            //generate table
+                // get the reference for the body
+                //var body = document.getElementsByTagName("body")[0];
+                // creates a <table> element and a <tbody> element
+                var tbl     = document.createElement("table");
+                var tblBody = document.createElement("tbody");
+
+                // creating all cells
+                for (var x = 0; x < 2; x++) {
+                    // creates a table row
+                    var row = document.createElement("tr");
+
+                    for (var j = 0; j < 2; j++) {
+                        // Create a <td> element and a text node, make the text
+                        // node the contents of the <td>, and put the <td> at
+                        // the end of the table row
+                        var cell = document.createElement("td");
+                        var cellText = document.createTextNode("cell in row "+ x + "value :" + data[i].ID +", column "+j);
+                        cell.appendChild(cellText);
+                        row.appendChild(cell);
+                    }
+
+                    // add the row to the end of the table body
+                    tblBody.appendChild(row);
+                }
+
+                // put the <tbody> in the <table>
+                tbl.appendChild(tblBody);
+                //// appends <table> into <body>
+                outputContainer.appendChild(tbl);
+                // sets the border attribute of tbl to 2;
+                tbl.setAttribute("border", "2");
+            //outputContainer.innerHTML = tbl;
+
+
+
         }
 
-        outputContainer.innerHTML = ourHTMLString;
+        //outputContainer.innerHTML = ourHTMLString;
+
 
     }
 }

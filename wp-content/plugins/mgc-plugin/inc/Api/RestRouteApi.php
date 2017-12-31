@@ -15,23 +15,21 @@ class RestRouteApi extends BaseController {
 	public function register() {
 
 		//The Following registers an api route with multiple parameters.
-//		echo "working 1";
 		add_action( 'rest_api_init', array($this ,'add_custom_posts_api' ));
 	}
 
 
-	function add_custom_posts_api() {
-		echo "working 2";
-		register_rest_route( 'mgc-plugin',  '/author/(?P\d+)', array( $this ,
+	public function add_custom_posts_api() {
+
+		//Created route //route: http://localhost/custom/wp-json/mgc-plugin/author/1 - with wp-integrated functions
+		register_rest_route( 'mgc-plugin',  '/author/(?P<id>\d+)', array(
 			'methods' => 'GET',
 			'callback' => array($this, 'get_post_title_by_author')
 		) );
 	}
 
 	//Customize the callback to your liking
-	function get_post_title_by_author( $data ) {
-
-		echo "WTF IS HAPPENOGN ";
+	public function get_post_title_by_author( $data ) {
 		$posts = get_posts( array(
 			'author' => $data['id'],
 		) );
@@ -39,7 +37,11 @@ class RestRouteApi extends BaseController {
 		if ( empty( $posts ) ) {
 			return null;
 		}
-
-		return $posts[0]->post_title;
+		return $posts;
 	}
+
+
 }
+
+
+
