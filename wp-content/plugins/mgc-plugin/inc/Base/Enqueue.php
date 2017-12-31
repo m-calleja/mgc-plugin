@@ -21,7 +21,9 @@ class Enqueue extends BaseController
     function enqueue () {
         //enqueeu all scripts
         wp_enqueue_style('pluginstyle', $this->plugin_url . 'assets/style.css', __FILE__);
+	    wp_enqueue_style('bootstrap', $this->plugin_url .'assets/bootstrap.min.css', __FILE__);
         wp_enqueue_script('pluginscript', $this->plugin_url .'assets/script.js', __FILE__);
+
 
 	    //security acquiring logged in user
 	    wp_localize_script('pluginscript' , 'data', array (

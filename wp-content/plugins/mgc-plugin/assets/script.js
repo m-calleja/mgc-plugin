@@ -94,11 +94,19 @@ if(addBtn) {
         createPost.setRequestHeader("X-WP-Nonce" , data.nonce);
         createPost.setRequestHeader("Content-Type" , "application/json;charset=UTF-8");
         createPost.send(JSON.stringify(postData));
-        createPost.inreadystatechange = function() {
+        createPost.onreadystatechange = function() {
         if(createPost.readyState == 4) {
+
             if(createPost.status == 201) {
                 document.getElementById("add-info-title").value = "";
                 document.getElementById("add-info-content").value = "";
+
+                var alertBox = document.getElementById("alert-message");
+                var successAlert = document.createElement('div');
+                successAlert.textContent = "Success! Your info has been posted";
+                successAlert.setAttribute('class', 'alert alert-success');
+                alertBox.appendChild(successAlert);
+
             } else {
                 alert("Error - try again");
             }
