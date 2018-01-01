@@ -53,6 +53,7 @@ register_activation_hook(__FILE__, 'activate_mgc_plugin');
  * The code that runs during plugin deactivation
  */
 function deactivate_mgc_plugin() {
+
     Inc\Base\Deactivate::deactivate();
 }
 
@@ -66,72 +67,6 @@ if(class_exists('Inc\\Init')) {
     Inc\Init::register_services();
 }
 
-
-if( !class_exists('MgcPlugin')) {
-    class MgcPlugin
-    {
-
-
-        function __construct()
-
-        {
-
-
-        }
-
-        function register()
-        {
-            $this->create_post_type();
-            $this->create_custom_role();
-
-        }
-
-        function create_post_type()
-        {
-            add_action('init', array($this, 'custom_post_type'));
-
-        }
-
-        function create_custom_role()
-        {
-            add_action('init', array($this, 'add_custom_role'));
-
-        }
-
-
-        function custom_post_type()
-        {
-            register_post_type('book', ['public' => true, 'label' => 'Books']);
-        }
-
-        function add_custom_role()
-        {
-            add_role('custom_moderator', __(
-                    'Custom Moderator'),
-                array(
-                    'read' => true, // Allows a user to read
-                    'create_posts' => true, // Allows user to create new posts
-                    'edit_posts' => true, // Allows user to edit their own posts
-                    'edit_others_posts' => true, // Allows user to edit others posts too
-                    'publish_posts' => true, // Allows the user to publish posts
-                    'manage_categories' => true, // Allows user to manage post categories
-                )
-            );
-        }
-
-
-        function option1()
-        {
-            echo <<<'EOD'
-    <h2> Please input a value in the text box</h2>
-EOD;
-
-        }
-
-    }
-
-
-}
 
 
 

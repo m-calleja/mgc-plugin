@@ -17,6 +17,7 @@ final class Init {
             Pages\Admin::class,
             Pages\CPT::class,
             Base\Enqueue::class,
+            Base\CreateRole::class,
             Base\SettingsLinks::class,
 	        Api\RestRouteApi::class
         ];
