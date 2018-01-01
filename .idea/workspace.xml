@@ -35,11 +35,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CPT.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CPT.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wp-content/plugins/mgc-plugin/inc/Pages/CPT.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.32978722" vertical-offset="580" max-vertical-offset="1530">
-              <caret line="49" column="54" selection-start-line="49" selection-start-column="54" selection-end-line="49" selection-end-column="54" />
+            <state vertical-scroll-proportion="-10.833333" vertical-offset="610" max-vertical-offset="1530">
+              <caret line="58" column="33" selection-start-line="58" selection-start-column="33" selection-end-line="58" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -55,11 +55,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RestRouteApi.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="RestRouteApi.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wp-content/plugins/mgc-plugin/inc/Api/RestRouteApi.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.9583335" vertical-offset="139" max-vertical-offset="765">
-              <caret line="24" column="43" selection-start-line="24" selection-start-column="43" selection-end-line="24" selection-end-column="43" />
+            <state vertical-scroll-proportion="0.8212766" vertical-offset="169" max-vertical-offset="750">
+              <caret line="39" column="4" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -1086,18 +1086,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/plugins/mgc-plugin/inc/Api/RestRouteApi.php">
+    <entry file="file://$PROJECT_DIR$/wp-content/plugins/mgc-plugin/inc/Pages/CPT.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.9583335" vertical-offset="139" max-vertical-offset="765">
-          <caret line="24" column="43" selection-start-line="24" selection-start-column="43" selection-end-line="24" selection-end-column="43" />
+        <state vertical-scroll-proportion="-10.833333" vertical-offset="610" max-vertical-offset="1530">
+          <caret line="58" column="33" selection-start-line="58" selection-start-column="33" selection-end-line="58" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/plugins/mgc-plugin/inc/Pages/CPT.php">
+    <entry file="file://$PROJECT_DIR$/wp-content/plugins/mgc-plugin/inc/Api/RestRouteApi.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.32978722" vertical-offset="580" max-vertical-offset="1530">
-          <caret line="49" column="54" selection-start-line="49" selection-start-column="54" selection-end-line="49" selection-end-column="54" />
+        <state vertical-scroll-proportion="0.8212766" vertical-offset="169" max-vertical-offset="750">
+          <caret line="39" column="4" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
           <folding />
         </state>
       </provider>

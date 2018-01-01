@@ -30,15 +30,14 @@ class RestRouteApi extends BaseController {
 
 	//Customize the callback to your liking
 	public function get_post_title_by_author( $data ) {
-		$posts = get_posts( array(
-			//TODO: customise further callback
-		) );
+		$posts = get_posts( 'post_type=client_posts');
 
 		if ( empty( $posts ) ) {
 			return null;
 		}
 		return $posts;
 	}
+
 
 
 }
