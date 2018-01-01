@@ -50,7 +50,7 @@ class CPT extends BaseController {
                 'show_in_menu'        => 'mgc_plugin',
                 'show_in_rest'        => true,
                 'rewrite'             => array('slug' => 'client_posts'),
-                'rest_base'          => 'client-posts-api',
+                'rest_base'           => 'client-posts-api',
                 'rest_controller_class' => 'WP_REST_Posts_Controller',
                 'capability_type'     => array('client_post','client_posts'),
                 'map_meta_cap'        => true,
@@ -59,7 +59,7 @@ class CPT extends BaseController {
             register_post_type( 'client_posts', $args );
         }
 
-       //Map Client Role soley to Client user ommiting administrator or super administrator if desired
+       //Map Client Role SOLEY to Client user ommiting administrator or super administrator if desired
 
         public function custom_capabilities_mapping ()
         {
@@ -70,6 +70,7 @@ class CPT extends BaseController {
         public function client_posts_add_role_caps()
         {
             // Adding the roles to administer the custom post types Client
+            // If administrator is removed  only custom role 'clients' will be able to see Client Post Type
             $roles = array('client', 'administrator');
 
             // Loop through each role and assigning capabilities

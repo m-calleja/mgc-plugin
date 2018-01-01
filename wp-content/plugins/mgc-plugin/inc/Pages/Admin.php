@@ -61,7 +61,7 @@ class Admin extends BaseController
 				'page_title' => 'Custom Taxonomy',
 				'menu_title' => 'Taxonomies',
 				'capability' => 'manage_options',
-				'menu_slug' => " mgc_taxonomies",
+				'menu_slug' => 'mgc_taxonomies',
 				'callback' => array($this->callbacks, 'adminTaxonomy'),
 
 			],
@@ -70,7 +70,7 @@ class Admin extends BaseController
 				'page_title' => 'Custom Widgets',
 				'menu_title' => 'Widgets',
 				'capability' => 'manage_options',
-				'menu_slug' => " mgc_widgets",
+				'menu_slug' =>  'mgc_widgets',
 				'callback' => array($this->callbacks, 'adminWidget'),
 
 			]
