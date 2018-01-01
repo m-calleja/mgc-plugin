@@ -96,19 +96,28 @@ if(addBtn) {
         createPost.send(JSON.stringify(postData));
         createPost.onreadystatechange = function() {
         if(createPost.readyState == 4) {
+            var alertBox = document.getElementById("alert-message");
+            //alertBox.removeChild(alertBox);
 
             if(createPost.status == 201) {
                 document.getElementById("add-info-title").value = "";
                 document.getElementById("add-info-content").value = "";
 
-                var alertBox = document.getElementById("alert-message");
+
                 var successAlert = document.createElement('div');
                 successAlert.textContent = "Success! Your info has been posted";
                 successAlert.setAttribute('class', 'alert alert-success');
                 alertBox.appendChild(successAlert);
+                //var alertBoxSuccess = document.getElementsByClassName("alert-success");
+                //console.log(alertBoxSuccess);
+                //alertBoxSuccess.classList.remove("is-hidden");
+
 
             } else {
-                alert("Error - try again");
+                var failAlert = document.createElement('div');
+                failAlert.textContent = "Error  try again";
+                failAlert.setAttribute('class', 'alert alert-danger');
+                alertBox.appendChild(failAlert);
             }
         }
     }

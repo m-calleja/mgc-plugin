@@ -15,6 +15,7 @@ final class Init {
     public static function get_services() {
         return [
             Pages\Admin::class,
+            Pages\CPT::class,
             Base\Enqueue::class,
             Base\SettingsLinks::class,
 	        Api\RestRouteApi::class

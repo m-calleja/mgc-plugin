@@ -2,8 +2,13 @@
 
 List of features
 
-* Modular Adminisration Area
-* CPT Manager
+* Modular Adminisration Area - Created modular setting interface
+* Created new post type of 'Client"
+* CPT Setting page - Generates results through set rest api route
+* Added Custom Role - Please create a new user and assign 'Client' role
+
+
+
 * Custom Taxonomy Manager
 * Widget to Upload and Display Media in sidebar
 * Post and Pages Gallery integration
