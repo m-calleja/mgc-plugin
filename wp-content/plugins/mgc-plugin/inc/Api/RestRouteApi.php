@@ -22,7 +22,7 @@ class RestRouteApi extends BaseController {
 	public function add_custom_posts_api() {
 
 		//Created route //route: http://localhost/custom/wp-json/mgc-plugin/client-posts-api - with wp-integrated functions
-		register_rest_route( 'mgc-plugin',  '/client-posts-api/', array(
+		register_rest_route( 'mgc-plugin/v1',  '/client-posts-api/', array(
 			'methods' => 'GET',
 			'callback' => array($this, 'get_post_title_by_author')
 		) );

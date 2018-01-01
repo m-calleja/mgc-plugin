@@ -5,7 +5,7 @@ function generate_table() {
 
     if(generateOutputBtn) {
         var routeRequest = new XMLHttpRequest();
-        routeRequest.open('GET',  data.siteURL + '/wp-json/mgc-plugin/client-posts-api/');
+        routeRequest.open('GET',  data.siteURL + '/wp-json/mgc-plugin/v1/client-posts-api/');
         routeRequest.onload = function() {
             if (routeRequest.status >= 200 && routeRequest.status < 400) {
                 var data = JSON.parse(routeRequest.responseText);
@@ -90,7 +90,7 @@ if(addBtn) {
             "status" : "publish"
         };
         var createPost = new XMLHttpRequest();
-        createPost.open("POST" , data.siteURL + '/wp-json/mgc-plugin/client-posts-api/');
+        createPost.open("POST" , data.siteURL + '/wp-json/mgc-plugin/v1/client-posts-api/');
         createPost.setRequestHeader("X-WP-Nonce" , data.nonce);
         createPost.setRequestHeader("Content-Type" , "application/json;charset=UTF-8");
         createPost.send(JSON.stringify(postData));
