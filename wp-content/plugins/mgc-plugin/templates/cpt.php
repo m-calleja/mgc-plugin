@@ -1,6 +1,6 @@
 <h1> Post the Information Required</h1>
 
-<?php if(current_user_can('client')) : ?>
+<?php //if(current_user_can('client')) : ?>
     <!--	<div class="alert alert-success is-hidden">-->
     <!--		<strong>Success!</strong> Your info has been posted</a>.-->
     <!--	</div>-->
@@ -13,5 +13,4 @@
     </div>
     <button type="button" class="btn btn-default" id="generate-output-btn" value="Generate results" onclick="generate_table()">Generate results</button>
     <div id="output-container"></div>
-    <p>Default Content</p>
-<?php endif; ?>
+<?php //endif; ?>
