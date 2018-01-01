@@ -90,7 +90,7 @@ if(addBtn) {
             "status" : "publish"
         };
         var createPost = new XMLHttpRequest();
-        createPost.open("POST" , data.siteURL + '/wp-json/mgc-plugin/v1/client-posts-api/');
+        createPost.open("POST" , data.siteURL + '/wp-json/wp/v2/posts/');
         createPost.setRequestHeader("X-WP-Nonce" , data.nonce);
         createPost.setRequestHeader("Content-Type" , "application/json;charset=UTF-8");
         createPost.send(JSON.stringify(postData));
