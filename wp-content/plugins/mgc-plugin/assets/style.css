@@ -1,5 +1,11 @@
 /*Post form */
 
+
+#output-container {
+    width: 100%;
+     margin: auto;
+    text-align: center;
+}
 .add-info {
     background-color: #DDD;
     padding: 15px;
@@ -28,9 +34,10 @@
 .divTableHeading {
     color: blue;
     background-color: #EEE;
-    /*display: table-header-group;*/
-    /*width: 100%;*/
     display: inline-block;
+    height: auto;
+    border: 1px solid black;
+    padding: 0.5em  1em;
 }
 .divTableCell, .divTableHead {
     border: 1px solid #999999;
