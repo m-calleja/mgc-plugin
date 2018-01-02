@@ -31,12 +31,9 @@ class RestRouteApi extends BaseController {
 		//Created route //route: http://localhost/custom/wp-json/mgc-plugin/client-posts-api - with wp-integrated functions
 		register_rest_route(  'mgc-plugin/v1' ,  '/client-posts-api/', array(
 			'methods' => 'GET',
-			'callback' => array($this, 'get_post_title_by_author'),
+			'callback' => array($this, 'get_custom_posts'),
             'args'            => array(
-                'per_page' => array(
-                    'default' => 10,
-                    'sanitize_callback' => 'absint',
-                ),
+
                 'slug' => array(
                     'default' => false,
                     'sanitize_callback' => 'sanitize_title',
@@ -45,12 +42,17 @@ class RestRouteApi extends BaseController {
         );
 	}
 
-	//Customize the callback to your liking
-	public function get_post_title_by_author( $data ) {
-		$posts = get_posts( 'post_type=client_posts');
+	//Returning 9 records in ASC order
+	public function get_custom_posts( $data ) {
+		$posts = get_posts( array(
+            'post_type'=> 'client_posts',
+                'order' => 'ASC',
+                'numberposts' => 9
+            )
+        );
 
 		if ( empty( $posts ) ) {
-			return null;
+			echo "I am sorry client post is empty";
 		}
 		return $posts;
 	}

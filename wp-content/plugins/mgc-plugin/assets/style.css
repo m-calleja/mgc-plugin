@@ -64,6 +64,13 @@
     }
 }
 
-.is-hidden {
+#alert-message-success
+
+{
 display: none;
+}
+
+#alert-message-fail
+{
+    display:none;
 }

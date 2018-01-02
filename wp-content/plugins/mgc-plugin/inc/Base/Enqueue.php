@@ -23,6 +23,7 @@ class Enqueue extends BaseController
         wp_enqueue_style('pluginstyle', $this->plugin_url . 'assets/style.css', __FILE__);
 	    wp_enqueue_style('bootstrap', $this->plugin_url .'assets/bootstrap.min.css', __FILE__);
         wp_enqueue_script('pluginscript', $this->plugin_url .'assets/script.js', __FILE__);
+        wp_enqueue_script('bootstrap', $this->plugin_url .'assets/bootstrap.min.js', __FILE__);
 
 
 	    //security acquiring logged in user

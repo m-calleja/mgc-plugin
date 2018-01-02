@@ -38,7 +38,6 @@ function generate_table() {
             var cellHeadingText = document.createTextNode(data[i].post_title);
             cellHeading.appendChild(cellHeadingText);
             outputContainer.appendChild(cellHeading);
-            //ourHTMLString += data[i].ID;
         }
             for(i = 0; i < data.length; i++) {
                 // creating all cells in the
@@ -82,6 +81,9 @@ if(addBtn) {
             "content": document.getElementById("add-info-content").value,
             "status" : "publish"
         };
+    var alertBox = document.getElementById("alert-message");
+
+
         var createPost = new XMLHttpRequest();
         createPost.open("POST" , data.siteURL + '/wp-json/wp/v2/client-posts-api');
         createPost.setRequestHeader("X-WP-Nonce" , data.nonce);
@@ -89,28 +91,17 @@ if(addBtn) {
         createPost.send(JSON.stringify(postData));
         createPost.onreadystatechange = function() {
         if(createPost.readyState == 4) {
-            var alertBox = document.getElementById("alert-message");
-            //alertBox.removeChild(alertBox);
 
             if(createPost.status == 201) {
+
                 document.getElementById("add-info-title").value = "";
                 document.getElementById("add-info-content").value = "";
-
-
-                var successAlert = document.createElement('div');
-                successAlert.textContent = "Success! Your info has been posted";
-                successAlert.setAttribute('class', 'alert alert-success');
-                alertBox.appendChild(successAlert);
-                //var alertBoxSuccess = document.getElementsByClassName("alert-success");
-                //console.log(alertBoxSuccess);
-                //alertBoxSuccess.classList.remove("is-hidden");
-
+                document.getElementById("alert-message-success").style.display = "block";
 
             } else {
-                var failAlert = document.createElement('div');
-                failAlert.textContent = "Error  try again";
-                failAlert.setAttribute('class', 'alert alert-danger');
-                alertBox.appendChild(failAlert);
+                document.getElementById("alert-message-fail").style.display = "block";
+
+
             }
         }
     }
