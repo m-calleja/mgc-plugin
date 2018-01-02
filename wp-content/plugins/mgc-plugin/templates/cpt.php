@@ -1,9 +1,6 @@
 <h1> Post the Information Required</h1>
+<h5> For the sake of the example we are going to print only the title from the title and content stored from the post form</h5>
 
-<?php //if(current_user_can('client')) : ?>
-    <!--	<div class="alert alert-success is-hidden">-->
-    <!--		<strong>Success!</strong> Your info has been posted</a>.-->
-    <!--	</div>-->
     <div id="alert-message"></div>
     <div class="add-info">
         <h3>Quick Add Post</h3>
@@ -13,4 +10,3 @@
     </div>
     <button type="button" class="btn btn-default" id="generate-output-btn" value="Generate results" onclick="generate_table()">Generate results</button>
     <div id="output-container" class="container"></div>
-<?php //endif; ?>

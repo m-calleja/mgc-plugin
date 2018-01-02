@@ -86,6 +86,7 @@ class CPT extends BaseController {
                 $role->add_cap('edit_others_client_posts');
                 $role->add_cap('edit_published_client_posts');
                 $role->add_cap('publish_client_posts');
+                $role->add_cap('manage_options_client_posts');
                 $role->add_cap('delete_others_client_posts');
                 $role->add_cap('delete_private_client_posts');
                 $role->add_cap('delete_published_client_posts');

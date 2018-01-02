@@ -24,15 +24,10 @@ function generate_table() {
 
 
     function createHTML(data) {
-        var ourHTMLString = "";
 
         for(i = 0; i < data.length; i++) {
-            //ourHTMLString += '<h2>' + data[i].post_title + '</h2>';
-            //ourHTMLString += data[i].post_content;
-            //generate  div table
 
-            //var body = document.getElementsByTagName("body")[0];
-            // creates a <table> element and a <tbody> element
+            // create the head cell row
             var tbl     = document.createElement("div");
             tbl.setAttribute("class", "divTable");
             var tblBody = document.createElement("div");
@@ -46,9 +41,8 @@ function generate_table() {
             //ourHTMLString += data[i].ID;
         }
             for(i = 0; i < data.length; i++) {
-                // creating all cells
-                //for (var x = 0; x < 2; x++) {
-                    // creates a table row
+                // creating all cells in the
+
                     var row = document.createElement("div");
                     row.setAttribute("class", "divTableRow");
 
@@ -73,7 +67,6 @@ function generate_table() {
                 //// appends divTable into divBody
                 outputContainer.appendChild(tbl);
                 // sets the border attribute of tbl to 2;
-                tbl.setAttribute("border", "5");
         }
     }
 }
