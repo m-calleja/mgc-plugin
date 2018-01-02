@@ -12,5 +12,5 @@
         <button type="button" class="btn btn-success" id="add-button" onclick="add_info()">Create Post</button>
     </div>
     <button type="button" class="btn btn-default" id="generate-output-btn" value="Generate results" onclick="generate_table()">Generate results</button>
-    <div id="output-container"></div>
+    <div id="output-container" class="container"></div>
 <?php //endif; ?>

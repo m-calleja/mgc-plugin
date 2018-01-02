@@ -1,11 +1,6 @@
 /*Post form */
 
 
-#output-container {
-    width: 100%;
-     margin: auto;
-    text-align: center;
-}
 .add-info {
     background-color: #DDD;
     padding: 15px;
@@ -23,13 +18,15 @@
 
 /*Rest Route Return Results Style*/
 
-/* DivTable.com */
-.divTable{
+#output-container {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+
+.divTable {
     display: table;
     width: 100%;
-}
-.divTableRow {
-    display: table-row;
 }
 .divTableHeading {
     color: blue;
@@ -37,25 +34,34 @@
     display: inline-block;
     height: auto;
     border: 1px solid black;
-    padding: 0.5em  1em;
+    padding: 0.5em 1em;
+
 }
-.divTableCell, .divTableHead {
+.divTableRow {
+    display: table-row;
+}
+
+.divTableCell {
     border: 1px solid #999999;
     display: table-cell;
     padding: 3px 10px;
 }
-.divTableHead {
-    width: 100%;
-}
 
-
-.divTableFoot {
-    background-color: #EEE;
-    display: table-footer-group;
-    font-weight: bold;
-}
 .divTableBody {
     display: table-row-group;
+}
+
+
+/*Responsive mobile trigger for results in the heading*/
+@media only screen and (max-width: 414px)  {
+
+    .divTableHeading {
+        display: block;
+        width:100%;
+        height: auto;
+        border: 1px solid black;
+
+    }
 }
 
 .is-hidden {
