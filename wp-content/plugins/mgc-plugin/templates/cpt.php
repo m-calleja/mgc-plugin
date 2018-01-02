@@ -4,10 +4,10 @@
     <h6> <i>This input form uses JS to POST to the registered rest route -<span> <b>/mgc-plugin/client-posts-api</b></span> </i></h6>
 
     <div id="alert-message-success">
-        <div class="alert alert-success alert-dismissible">
-            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-            <strong>Success!</strong> Client post successfully added.
-        </div>
+<!--        <div class="alert alert-success alert-dismissible">-->
+<!--            <a href="#" class="close" data-dismiss="alert" data-hide="alert" aria-label="close">&times;</a>-->
+<!--            <strong>Success!</strong> Client post successfully added.-->
+<!--        </div>-->
 </div>
     <div id="alert-message-fail">
         <div class="alert alert-danger alert-dismissible">
@@ -22,8 +22,8 @@
         <h3>Quick Add Post</h3>
         <input type="text" id="add-info-title" name="title" placeholder="Title">
         <textarea name="content" id="add-info-content" placeholder="Content"></textarea>
-        <button type="button" class="btn btn-success" id="add-button" onclick="add_info()">Create Post</button>
+        <button type="button" class="btn btn-success" id="add-button" onclick="postResults()">Create Post</button>
     </div>
-    <button type="button" class="btn btn-default" id="generate-output-btn" value="Generate results" onclick="generate_table()">Generate results</button>
+    <button type="button" class="btn btn-default" id="generate-output-btn" value="Generate results" onclick="fetchResults()">Generate results</button>
     <div id="output-container" class="container"></div>
 </div>

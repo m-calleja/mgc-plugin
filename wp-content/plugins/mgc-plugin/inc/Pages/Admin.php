@@ -51,7 +51,7 @@ class Admin extends BaseController
             [
                 'parent_slug' => 'mgc_plugin',
                 'page_title' => 'Custom Post Types',
-                'menu_title' => 'CPT',
+                'menu_title' => 'Generate/Add - JS',
                 'capability' => 'manage_options',
                 'menu_slug' => 'mgc_cpt',
                 'callback' => array( $this->callbacks, 'adminCpt' )

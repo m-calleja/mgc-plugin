@@ -47,7 +47,7 @@ class RestRouteApi extends BaseController {
 		$posts = get_posts( array(
             'post_type'=> 'client_posts',
                 'order' => 'ASC',
-                'numberposts' => 9
+                'numberposts' => 8
             )
         );
 

@@ -22,12 +22,12 @@ class CPT extends BaseController {
         public function set_custom_post_type() {
 
             $labels = array(
-                'name'               => _x( 'Clients', 'Client Posts', 'mgc-plugin' ),
-                'singular_name'      => _x( 'Clients', 'Client Posts', 'mgc-plugin' ),
+                'name'               => _x( 'Client Posts', 'Client Posts', 'mgc-plugin' ),
+                'singular_name'      => _x( 'Client Post', 'Client Post', 'mgc-plugin' ),
                 'menu_name'          => _x( 'Clients', 'admin menu', 'mgc-plugin' ),
                 'name_admin_bar'     => _x( 'Clients', 'Client Posts', 'mgc-plugin' ),
-                'add_new'            => _x( 'Add New Client Posts', 'client post', 'mgc-plugin' ),
-                'add_new_item'       => __( 'Add New Client Posts', 'mgc-plugin' ),
+                'add_new'            => _x( 'Add New Client Post', 'client post', 'mgc-plugin' ),
+                'add_new_item'       => __( 'Add New Client Post', 'mgc-plugin' ),
                 'new_item'           => __( 'New Client Post', 'mgc-plugin' ),
                 'edit_item'          => __( 'Edit Client Post', 'mgc-plugin' ),
                 'view_item'          => __( 'View Client Post', 'mgc-plugin' ),
@@ -40,10 +40,9 @@ class CPT extends BaseController {
 
 
             $args = [
-                'label'               => __( 'Client Posts', 'client_posts' ),
-                'description'         => __( 'Client Posts', 'client_posts' ),
+                'label'               => __( 'Client Posts - WP', 'client_posts' ),
+                'description'         => __( 'Client Posts - WP', 'client_posts' ),
                 'labels'              => $labels,
-                'supports'            => array( 'title', 'comments', 'revisions', ),
                 'hierarchical'        => false,
                 'public'              => true,
                 'show_ui'             => true,
@@ -59,7 +58,7 @@ class CPT extends BaseController {
             register_post_type( 'client_posts', $args );
         }
 
-       //Map Client Role SOLEY to Client user ommiting administrator or super administrator if desired
+       //Map Client Role to Client user
 
         public function custom_capabilities_mapping ()
         {
@@ -71,7 +70,7 @@ class CPT extends BaseController {
         {
             // Adding the roles to administer the custom post types Client
             // If administrator is removed  only custom role 'clients' will be able to see Client Post Type
-            $roles = array('client', 'administrator');
+            $roles = array('client');
 
             // Loop through each role and assigning capabilities
             foreach ($roles as $the_role) {
@@ -80,15 +79,30 @@ class CPT extends BaseController {
 
                 $role->add_cap('read');
                 $role->add_cap('read_client_post');
+                $role->add_cap('read_pages');
+                $role->add_cap('read_private_pages');
+                $role->add_cap('read_private_posts');
                 $role->add_cap('read_private_client_posts');
+                $role->add_cap('upload_files');
+                $role->add_cap('edit');
                 $role->add_cap('edit_client_post');
-                $role->add_cap('edit_client_posts');
+                $role->add_cap('edit_others_posts');
                 $role->add_cap('edit_others_client_posts');
+                $role->add_cap('edit_pages');
+                $role->add_cap('edit_others_pages');
+                $role->add_cap('delete_pages');
+                $role->add_cap('delete__others_pages');
+                $role->add_cap('delete_private_pages');
+                $role->add_cap('edit_published_posts');
                 $role->add_cap('edit_published_client_posts');
+                $role->add_cap('publish_posts');
+                $role->add_cap('publish_pages');
                 $role->add_cap('publish_client_posts');
-                $role->add_cap('manage_options_client_posts');
+                $role->add_cap('delete_posts');
+                $role->add_cap('delete_others_posts');
                 $role->add_cap('delete_others_client_posts');
                 $role->add_cap('delete_private_client_posts');
+                $role->add_cap('delete_published_posts');
                 $role->add_cap('delete_published_client_posts');
 
             }

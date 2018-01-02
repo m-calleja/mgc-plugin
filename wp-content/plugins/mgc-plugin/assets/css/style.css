@@ -1,5 +1,8 @@
 /*Post form */
 
+#alert-message-success {
+    /*display: none;*/
+}
 
 .add-info {
     background-color: #DDD;
@@ -68,12 +71,6 @@
     }
 }
 
-
-#alert-message-success
-
-{
-display: none;
-}
 
 #alert-message-fail
 {
