@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="daeff3fa-e5d9-4afc-b691-4f3618a4212f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/plugins/mgc-plugin/inc/Base/Enqueue.php" afterPath="$PROJECT_DIR$/wp-content/plugins/mgc-plugin/inc/Base/Enqueue.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/plugins/mgc-plugin/inc/Api/RestRouteApi.php" afterPath="$PROJECT_DIR$/wp-content/plugins/mgc-plugin/inc/Api/RestRouteApi.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/plugins/mgc-plugin/templates/cpt.php" afterPath="$PROJECT_DIR$/wp-content/plugins/mgc-plugin/templates/cpt.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/plugins/mgc-plugin/assets/script.js" afterPath="$PROJECT_DIR$/wp-content/plugins/mgc-plugin/assets/script.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/plugins/mgc-plugin/assets/style.css" afterPath="$PROJECT_DIR$/wp-content/plugins/mgc-plugin/assets/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -54,11 +50,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wp-content/plugins/mgc-plugin/assets/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="661" max-vertical-offset="1215">
-              <caret line="74" column="16" selection-start-line="74" selection-start-column="16" selection-end-line="74" selection-end-column="16" />
+            <state vertical-scroll-proportion="0.3319838" vertical-offset="406" max-vertical-offset="1770">
+              <caret line="38" column="15" selection-start-line="38" selection-start-column="15" selection-end-line="38" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -67,17 +63,17 @@
       <file leaf-file-name="script.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wp-content/plugins/mgc-plugin/assets/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="16.153847" vertical-offset="435" max-vertical-offset="1740">
+            <state vertical-scroll-proportion="39.807693" vertical-offset="1050" max-vertical-offset="1740">
               <caret line="1" column="27" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="27" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RestRouteApi.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="RestRouteApi.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wp-content/plugins/mgc-plugin/inc/Api/RestRouteApi.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.625" vertical-offset="370" max-vertical-offset="1035">
+            <state vertical-scroll-proportion="-17.083334" vertical-offset="370" max-vertical-offset="1035">
               <caret line="54" column="49" selection-start-line="54" selection-start-column="49" selection-end-line="54" selection-end-column="49" />
               <folding />
             </state>
@@ -182,10 +178,10 @@
         <option value="$PROJECT_DIR$/wp-content/plugins/mgc-plugin/mgc-plugin.php" />
         <option value="$PROJECT_DIR$/wp-content/plugins/mgc-plugin/inc/Pages/CPT.php" />
         <option value="$PROJECT_DIR$/wp-content/plugins/mgc-plugin/inc/Base/Enqueue.php" />
-        <option value="$PROJECT_DIR$/wp-content/plugins/mgc-plugin/assets/style.css" />
         <option value="$PROJECT_DIR$/wp-content/plugins/mgc-plugin/templates/cpt.php" />
         <option value="$PROJECT_DIR$/wp-content/plugins/mgc-plugin/assets/script.js" />
         <option value="$PROJECT_DIR$/wp-content/plugins/mgc-plugin/inc/Api/RestRouteApi.php" />
+        <option value="$PROJECT_DIR$/wp-content/plugins/mgc-plugin/assets/style.css" />
       </list>
     </option>
   </component>
@@ -197,7 +193,7 @@
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP" />
   <component name="ProjectFrameBounds">
     <option name="x" value="-1440" />
-    <option name="y" value="64" />
+    <option name="y" value="212" />
     <option name="width" value="1413" />
     <option name="height" value="821" />
   </component>
@@ -608,11 +604,11 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1440" y="64" width="1413" height="821" extended-state="0" />
+    <frame x="-1440" y="212" width="1413" height="821" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16826266" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25444597" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25444597" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32968536" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32831737" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1078,14 +1074,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/plugins/mgc-plugin/assets/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="661" max-vertical-offset="1215">
-          <caret line="74" column="16" selection-start-line="74" selection-start-column="16" selection-end-line="74" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/plugins/mgc-plugin/templates/cpt.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.5" vertical-offset="0" max-vertical-offset="525">
@@ -1094,18 +1082,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/plugins/mgc-plugin/inc/Api/RestRouteApi.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-17.083334" vertical-offset="370" max-vertical-offset="1035">
+          <caret line="54" column="49" selection-start-line="54" selection-start-column="49" selection-end-line="54" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/plugins/mgc-plugin/assets/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="16.153847" vertical-offset="435" max-vertical-offset="1740">
+        <state vertical-scroll-proportion="39.807693" vertical-offset="1050" max-vertical-offset="1740">
           <caret line="1" column="27" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/plugins/mgc-plugin/inc/Api/RestRouteApi.php">
+    <entry file="file://$PROJECT_DIR$/wp-content/plugins/mgc-plugin/assets/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.625" vertical-offset="370" max-vertical-offset="1035">
-          <caret line="54" column="49" selection-start-line="54" selection-start-column="49" selection-end-line="54" selection-end-column="49" />
+        <state vertical-scroll-proportion="0.3319838" vertical-offset="406" max-vertical-offset="1770">
+          <caret line="38" column="15" selection-start-line="38" selection-start-column="15" selection-end-line="38" selection-end-column="15" />
           <folding />
         </state>
       </provider>

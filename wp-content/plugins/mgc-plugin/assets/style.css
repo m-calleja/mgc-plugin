@@ -22,6 +22,7 @@
     width: 100%;
     margin: auto;
     text-align: center;
+
 }
 
 .divTable {
@@ -35,6 +36,8 @@
     height: auto;
     border: 1px solid black;
     padding: 0.5em 1em;
+    width: 10.9vw;
+
 
 }
 .divTableRow {
@@ -53,6 +56,7 @@
 
 
 /*Responsive mobile trigger for results in the heading*/
+/*Mobile */
 @media only screen and (max-width: 414px)  {
 
     .divTableHeading {
@@ -62,6 +66,39 @@
         border: 1px solid black;
 
     }
+}
+
+/*Common Res x1377*/
+@media only screen and (max-width: 1377px) and (min-width: 1367px)  {
+    .divTableHeading {
+        width: 10.186vw;
+
+    }
+}
+/*Ipad Pro*/
+@media only screen and (max-width: 1366px) and (min-width: 1025px)  {
+    .divTableHeading {
+       width: 10.304vw;
+
+    }
+}
+
+/*Ipad*/
+@media only screen and (max-width: 1024px) and (min-width: 769px)  {
+    .divTableHeading {
+       width: 9.57vw;
+
+    }
+
+}
+/*Ipad*/
+@media only screen and (max-width: 768px) and (min-width: 415px)  {
+    .divTableHeading {
+        height: auto;
+        width: 11.36vw;
+
+    }
+
 }
 
 #alert-message-success
