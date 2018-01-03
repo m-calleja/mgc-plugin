@@ -46,7 +46,7 @@ class CPT extends BaseController
             'label' => __('Client Posts', 'client_posts'),
             'description' => __('Client Posts', 'client_posts'),
             'labels' => $labels,
-            'supports' => array('title', 'comments', 'revisions',),
+            'supports' => array( 'title', 'editor', 'comments', 'revisions', 'trackbacks', 'author', 'excerpt', 'page-attributes', 'thumbnail', 'custom-fields' , 'post-formats'),
             'hierarchical' => false,
             'public' => true,
             'show_ui' => true,
@@ -108,6 +108,7 @@ class CPT extends BaseController
             $role->add_cap('delete_private_client_posts');
             $role->add_cap('delete_published_posts');
             $role->add_cap('delete_published_client_posts');
+            $role->add_cap('manage_options_client_posts');
 
 
         }
