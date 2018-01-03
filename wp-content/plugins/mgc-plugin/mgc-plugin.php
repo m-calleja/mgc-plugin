@@ -35,14 +35,15 @@ Copyright 2005-2015 Automattic, Inc.
 defined('ABSPATH') or die('You don\t have permission to access this file, turn back kiddo!');
 
 //Require once autoloader composer
-if(file_exists( dirname(__FILE__) . '/vendor/autoload.php')) {
+if (file_exists(dirname(__FILE__) . '/vendor/autoload.php')) {
     require_once dirname(__FILE__) . '/vendor/autoload.php';
 }
 
 /**
  * The code that runs during plugin activation
  */
-function activate_mgc_plugin() {
+function activate_mgc_plugin()
+{
     Inc\Base\Activate::activate();
 }
 
@@ -52,7 +53,8 @@ register_activation_hook(__FILE__, 'activate_mgc_plugin');
 /**
  * The code that runs during plugin deactivation
  */
-function deactivate_mgc_plugin() {
+function deactivate_mgc_plugin()
+{
 
     Inc\Base\Deactivate::deactivate();
 }
@@ -63,7 +65,7 @@ register_deactivation_hook(__FILE__, 'deactivate_mgc_plugin');
 /**
  * Initialise classes within the plugin through init.php
  */
-if(class_exists('Inc\\Init')) {
+if (class_exists('Inc\\Init')) {
     Inc\Init::register_services();
 }
 

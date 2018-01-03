@@ -18,19 +18,26 @@ class Enqueue extends BaseController
     }
 
 
-    function enqueue () {
+    function enqueue()
+    {
+        //enqueeu all css
+        wp_enqueue_style('pluginstyle', $this->plugin_url . 'assets/css/style.css', __FILE__);
+        wp_enqueue_style('bootstrap', $this->plugin_url . 'assets/css/bootstrap.min.css', __FILE__);
+        wp_enqueue_script('fetchresults', $this->plugin_url . 'assets/js/fetchResults.js', __FILE__);
+
         //enqueeu all scripts
-        wp_enqueue_style('pluginstyle', $this->plugin_url . 'assets/style.css', __FILE__);
-	    wp_enqueue_style('bootstrap', $this->plugin_url .'assets/bootstrap.min.css', __FILE__);
-        wp_enqueue_script('pluginscript', $this->plugin_url .'assets/script.js', __FILE__);
-        wp_enqueue_script('bootstrap', $this->plugin_url .'assets/bootstrap.min.js', __FILE__);
+        wp_enqueue_script('bootstrap', $this->plugin_url . 'assets/js/bootstrap.min.js', __FILE__);
+        wp_enqueue_script('outputresults', $this->plugin_url . 'assets/js/outputResults.js', __FILE__);
+        wp_enqueue_script('postResults', $this->plugin_url . 'assets/js/postResults.js', __FILE__);
 
 
-	    //security acquiring logged in user
-	    wp_localize_script('pluginscript' , 'data', array (
-		    'nonce' => wp_create_nonce('wp_rest'),
-		    'siteURL' => get_site_url()
-	    ));
+
+
+        //security acquiring logged in user
+        wp_localize_script('postResults', 'data', array(
+            'nonce' => wp_create_nonce('wp_rest'),
+            'siteURL' => get_site_url()
+        ));
     }
 
 }

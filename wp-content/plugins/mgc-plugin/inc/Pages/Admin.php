@@ -13,79 +13,81 @@ use\Inc\Api\Callbacks\AdminCallbacks;
 
 class Admin extends BaseController
 {
-		public $settings;
-	    public $callbacks;
-		public $pages = array();
-		public $subpages = array();
+    public $settings;
+    public $callbacks;
+    public $pages = array();
+    public $subpages = array();
 
 
-        public function register()
-        {
-	        $this->settings = new SettingsApi();
-	        $this->callbacks = new AdminCallbacks();
-	        $this->setPages();
-	        $this->setSubPages();
-            $this->setSettings();
-            $this->setSections();
-            $this->setFields();
-	        $this->settings->addPages( $this->pages )->withSubPage('Dashboard')->addSubPages($this->subpages)->register();
-        }
+    public function register()
+    {
+        $this->settings = new SettingsApi();
+        $this->callbacks = new AdminCallbacks();
+        $this->setPages();
+        $this->setSubPages();
+        $this->setSettings();
+        $this->setSections();
+        $this->setFields();
+        $this->settings->addPages($this->pages)->withSubPage('Dashboard')->addSubPages($this->subpages)->register();
+    }
 
-	function setPages() {
+    function setPages()
+    {
 
-		$this->pages = [
-			[
-				'page_title' => 'Mgc Plugin',
-				'menu_title' => 'Mgc',
-				'capability' => 'manage_options',
-				'menu_slug' => 'mgc_plugin',
-				'callback' => array($this->callbacks, 'adminDashboard'),
-				'icon_url' => 'dashicons-store',
-				'position' => 110
-			]
-		];
-	}
+        $this->pages = [
+            [
+                'page_title' => 'Mgc Plugin',
+                'menu_title' => 'Mgc',
+                'capability' => 'manage_options',
+                'menu_slug' => 'mgc_plugin',
+                'callback' => array($this->callbacks, 'adminDashboard'),
+                'icon_url' => 'dashicons-store',
+                'position' => 110
+            ]
+        ];
+    }
 
-	public function setSubPages() {
-		$this->subpages = [
+    public function setSubPages()
+    {
+        $this->subpages = [
             [
                 'parent_slug' => 'mgc_plugin',
                 'page_title' => 'Custom Post Types',
-                'menu_title' => 'CPT',
+                'menu_title' => 'Generat/Add - JS',
                 'capability' => 'manage_options',
                 'menu_slug' => 'mgc_cpt',
-                'callback' => array( $this->callbacks, 'adminCpt' )
+                'callback' => array($this->callbacks, 'adminCpt')
             ],
-			[
-				'parent_slug' => 'mgc_plugin',
-				'page_title' => 'Custom Taxonomy',
-				'menu_title' => 'Taxonomies',
-				'capability' => 'manage_options',
-				'menu_slug' => 'mgc_taxonomies',
-				'callback' => array($this->callbacks, 'adminTaxonomy'),
+            [
+                'parent_slug' => 'mgc_plugin',
+                'page_title' => 'Custom Taxonomy',
+                'menu_title' => 'Taxonomies',
+                'capability' => 'manage_options',
+                'menu_slug' => 'mgc_taxonomies',
+                'callback' => array($this->callbacks, 'adminTaxonomy'),
 
-			],
-			[
-				'parent_slug' => 'mgc_plugin',
-				'page_title' => 'Custom Widgets',
-				'menu_title' => 'Widgets',
-				'capability' => 'manage_options',
-				'menu_slug' =>  'mgc_widgets',
-				'callback' => array($this->callbacks, 'adminWidget'),
+            ],
+            [
+                'parent_slug' => 'mgc_plugin',
+                'page_title' => 'Custom Widgets',
+                'menu_title' => 'Widgets',
+                'capability' => 'manage_options',
+                'menu_slug' => 'mgc_widgets',
+                'callback' => array($this->callbacks, 'adminWidget'),
 
-			]
-		];
-	}
+            ]
+        ];
+    }
 
     public function setSettings()
     {
 
-        $args = array (
+        $args = array(
 
             array(
-            'option_group' => 'mgc_plugin_group',
-            'option_name' => 'custom_input_page',
-            'callback' => array($this->callbacks, 'mgcOptionsGroup')
+                'option_group' => 'mgc_plugin_group',
+                'option_name' => 'custom_input_page',
+                'callback' => array($this->callbacks, 'mgcOptionsGroup')
             )
         );
 
@@ -96,7 +98,7 @@ class Admin extends BaseController
     public function setSections()
     {
 
-        $args = array (
+        $args = array(
 
             array(
 
@@ -114,7 +116,7 @@ class Admin extends BaseController
     public function setFields()
     {
 
-        $args = array (
+        $args = array(
 
             array(
 
@@ -125,8 +127,8 @@ class Admin extends BaseController
                 'section' => 'mgc_plugin',
                 'section' => 'mgc_admin_index',
                 'args' => array(
-                     'label_for' => 'custom_input_field',
-                      'class' => 'add-settings'
+                    'label_for' => 'custom_input_field',
+                    'class' => 'add-settings'
                 )
 
             )
@@ -136,5 +138,6 @@ class Admin extends BaseController
     }
 
 
+}
 
-};
+;

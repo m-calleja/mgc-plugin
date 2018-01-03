@@ -1,5 +1,4 @@
-/*Post form */
-
+/*Post Client custom post form */
 
 .add-info {
     background-color: #DDD;
@@ -29,7 +28,8 @@
     display: table;
     width: 100%;
 }
-.divTableHeading {
+
+.divTableHeadingRow {
     color: blue;
     background-color: #EEE;
     display: inline-block;
@@ -38,8 +38,8 @@
     padding: 0.5em 1em;
     width: 12.5%
 
-
 }
+
 .divTableRow {
     display: table-row;
 }
@@ -54,28 +54,16 @@
     display: table-row-group;
 }
 
-
 /*Responsive mobile trigger for results in the heading*/
 /*Mobile */
-@media only screen and (max-width: 414px)  {
+@media only screen and (max-width: 414px) {
 
-    .divTableHeading {
+    .divTableHeadingRow {
         display: block;
-        width:100%;
+        width: 100%;
         height: auto;
         border: 1px solid black;
 
     }
 }
 
-
-#alert-message-success
-
-{
-display: none;
-}
-
-#alert-message-fail
-{
-    display:none;
-}
