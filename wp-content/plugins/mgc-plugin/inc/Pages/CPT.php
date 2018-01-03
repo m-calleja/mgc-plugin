@@ -73,7 +73,7 @@ class CPT extends BaseController
     public function client_posts_add_role_caps()
     {
         // Adding the roles to administer the custom post types Client
-        // Oonly custom role 'clients' and administrator will be able to see Client Post Type
+        // Ooly custom role 'clients' and administrator will be able to see Client Post Type
         $roles = array('client', 'administrator');
 
         // Loop through each role and assigning capabilities
@@ -90,6 +90,7 @@ class CPT extends BaseController
             $role->add_cap('upload_files');
             $role->add_cap('edit');
             $role->add_cap('edit_client_post');
+            $role->add_cap('edit_client_posts');
             $role->add_cap('edit_others_posts');
             $role->add_cap('edit_others_client_posts');
             $role->add_cap('edit_pages');
@@ -108,7 +109,6 @@ class CPT extends BaseController
             $role->add_cap('delete_private_client_posts');
             $role->add_cap('delete_published_posts');
             $role->add_cap('delete_published_client_posts');
-            $role->add_cap('manage_options_client_posts');
 
 
         }
