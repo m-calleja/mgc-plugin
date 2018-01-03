@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <h1> Post the Information Required</h1>
-    <h5> For the sake of the example we are going to print only the title from the title and content stored from the
+    <h5> For the sake of the example we are going to print only the title from the post 'title' and 'content' stored' through this form
         post form</h5>
     <h6><i>This input form uses JS to POST to the registered rest route
             -<span> <b>/mgc-plugin/client-posts-api</b></span> </i></h6>

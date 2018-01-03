@@ -11,6 +11,7 @@ Description: Plugin for storing and displaying data inputted by user
 Author: Mei Calleja
 Version: 1.0
 License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: mgc-plugin
 */
 /*
