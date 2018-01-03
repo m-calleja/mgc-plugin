@@ -73,7 +73,7 @@ class CPT extends BaseController
     public function client_posts_add_role_caps()
     {
         // Adding the roles to administer the custom post types Client
-        // If administrator is removed  only custom role 'clients' will be able to see Client Post Type
+        // Oonly custom role 'clients' and administrator will be able to see Client Post Type
         $roles = array('client', 'administrator');
 
         // Loop through each role and assigning capabilities
