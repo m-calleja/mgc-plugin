@@ -58,24 +58,6 @@ class Admin extends BaseController
                 'menu_slug' => 'mgc_cpt',
                 'callback' => array($this->callbacks, 'adminCpt')
             ],
-            [
-                'parent_slug' => 'mgc_plugin',
-                'page_title' => 'Custom Taxonomy',
-                'menu_title' => 'Taxonomies',
-                'capability' => 'manage_options',
-                'menu_slug' => 'mgc_taxonomies',
-                'callback' => array($this->callbacks, 'adminTaxonomy'),
-
-            ],
-            [
-                'parent_slug' => 'mgc_plugin',
-                'page_title' => 'Custom Widgets',
-                'menu_title' => 'Widgets',
-                'capability' => 'manage_options',
-                'menu_slug' => 'mgc_widgets',
-                'callback' => array($this->callbacks, 'adminWidget'),
-
-            ]
         ];
     }
 
@@ -138,6 +120,4 @@ class Admin extends BaseController
     }
 
 
-}
-
-;
+};
