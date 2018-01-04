@@ -1,2 +1,1 @@
-
-    <h1> Taxonomy Page </h1>
+<h1> Widget Page</h1>
